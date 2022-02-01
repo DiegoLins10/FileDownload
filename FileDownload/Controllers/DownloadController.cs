@@ -25,9 +25,9 @@ namespace FileDownload.Controllers
         public FileContentResult Get()
         {
             var data = System.IO.File.ReadAllBytes(filePath);
-            var result = new FileContentResult(data, filePath);
+            var result = new FileContentResult(data, "application/octet-stream");
             {
-                FileDownloadName = "File.csv";
+                result.FileDownloadName = "File.csv";
             };
             return result;
         }
